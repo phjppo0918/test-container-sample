@@ -1,4 +1,4 @@
-package com.example.testcontainerexample.hello;
+package com.example.testcontainerexample.hello.mysql;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

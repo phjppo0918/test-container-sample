@@ -1,8 +1,8 @@
 package com.example.testcontainerexample;
 
 import com.example.testcontainerexample.config.IntegrationTest;
-import com.example.testcontainerexample.hello.Hello;
-import com.example.testcontainerexample.hello.HelloRepository;
+import com.example.testcontainerexample.hello.mysql.Hello;
+import com.example.testcontainerexample.hello.mysql.HelloRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @IntegrationTest
-class RepositoryTest {
+class MysqlRepositoryTest {
     @Autowired
     HelloRepository helloRepository;
 

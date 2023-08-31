@@ -1,11 +1,7 @@
 spring:
-  config:
-    activate:
-      on-profile: local
-
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/example?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/example?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: 1234
 
@@ -20,4 +16,8 @@ spring:
         show_sql: true
   data:
     redis:
-      url: redis://localhost:6379/0
+      host: localhost
+      port: 6379
+  redis:
+    port: 6379
+    host: localhost

@@ -1,4 +1,4 @@
-package com.example.testcontainerexample.hello;
+package com.example.testcontainerexample.hello.mysql;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
