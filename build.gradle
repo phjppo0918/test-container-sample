@@ -24,15 +24,17 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'com.redis.testcontainers:testcontainers-redis-tests:1.4.6'
     implementation 'org.springframework.data:spring-data-redis:3.1.2'
     implementation 'com.mysql:mysql-connector-j:8.1.0'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
-    testImplementation 'org.testcontainers:junit-jupiter'
+    testImplementation 'org.testcontainers:junit-jupiter:1.19.0'
+    testImplementation 'org.testcontainers:mysql'
+    testImplementation 'org.testcontainers:redis'
 }
 
 tasks.named('test') {
