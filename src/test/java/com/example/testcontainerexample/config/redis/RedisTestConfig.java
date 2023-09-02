@@ -16,9 +16,10 @@ public class RedisTestConfig {
     private static GenericContainer<?> REDIS = new GenericContainer<>(DockerImageName.parse("redis:7.0.8-alpine"))
             .withExposedPorts(6379).withReuse(true);
 
+
+
     @PostConstruct
     void postConstruct() {
-       // System.setProperty("spring.redis.host", REDIS.getHost());
         REDIS.start();
     }
 
