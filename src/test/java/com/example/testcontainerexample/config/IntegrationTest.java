@@ -17,6 +17,5 @@ import java.lang.annotation.Target;
 @Import({MysqlTestConfig.class, RedisTestConfig.class})
 @SpringBootTest
 @ActiveProfiles("test")
-@Testcontainers
 public @interface IntegrationTest {
 }

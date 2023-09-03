@@ -1,26 +1,25 @@
 package com.example.testcontainerexample.config.redis;
 
-import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
 
 @TestConfiguration
 public class RedisTestConfig {
+    private static final int REDIS_PORT = 6379;
 
     @Container
-    @ServiceConnection
     private static GenericContainer<?> REDIS = new GenericContainer<>(DockerImageName.parse("redis:7.0.8-alpine"))
-            .withExposedPorts(6379).withReuse(true);
+            .withExposedPorts(REDIS_PORT);
 
-
-
-    @PostConstruct
-    void postConstruct() {
+    static {
         REDIS.start();
+        System.setProperty("spring.data.redis.host", REDIS.getHost());
+        System.setProperty("spring.data.redis.port", String.valueOf(REDIS.getMappedPort(REDIS_PORT)));
     }
 
     @PreDestroy

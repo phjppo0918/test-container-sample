@@ -12,6 +12,3 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
-  data:
-    redis:
-      url: tc:redis:///
