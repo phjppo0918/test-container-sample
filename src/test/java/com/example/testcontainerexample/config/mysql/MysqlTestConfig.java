@@ -12,14 +12,12 @@ import org.testcontainers.utility.DockerImageName;
 @TestConfiguration
 public class MysqlTestConfig {
     @Container
-    @ServiceConnection
-    private static MySQLContainer<?> MYSQL = new MySQLContainer<>("mysql:8.0.24");
+    private static GenericContainer<?> MYSQL = new GenericContainer<>("mysql:8.0.24");
 
 
-    @PostConstruct
-    void postConstruct() {
+   static {
         MYSQL.start();
-    }
+   }
 
     @PreDestroy
     void preDestroy() {

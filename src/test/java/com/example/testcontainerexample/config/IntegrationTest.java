@@ -1,5 +1,6 @@
 package com.example.testcontainerexample.config;
 
+import com.example.testcontainerexample.config.mongodb.MongodbTestConfig;
 import com.example.testcontainerexample.config.mysql.MysqlTestConfig;
 import com.example.testcontainerexample.config.redis.RedisTestConfig;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +15,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Import({MysqlTestConfig.class, RedisTestConfig.class})
+@Import({MysqlTestConfig.class, RedisTestConfig.class, MongodbTestConfig.class})
 @SpringBootTest
 @ActiveProfiles("test")
 public @interface IntegrationTest {
